@@ -10,7 +10,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="bg-gray-100 container max-w-[1300px] p-6">
+    <div className="bg-gray-100 container max-w-[1440px] mx-auto p-6">
       {/* Header mit Logo und Navigation */}
       <header className="p-2 flex items-center justify-between mb-12 ">
         <img src={logo} alt="logo" />
