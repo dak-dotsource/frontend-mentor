@@ -63,16 +63,16 @@ function App() {
 
         {/* Heading und Content */}
 
-        <h2 className="text-7xl font-bold pb-6 w-4/5">
+        <h2 className="text-6xl font-bold pb-6 w-4/5">
           The Bright Future of Web 3.0?
         </h2>
-        <div>
-          <p className="text-lg text-gray-600 w-4/5">
+        <div className="flex flex-col justify-between items-end ">
+          <p className="text-lg text-gray-600 ">
             We dive into the next evolution of the web that claims to put the
             power of the platforms back into the hands of the people. But is it
             really fulfilling its promise?
           </p>
-          <button className="bg-softRed text-black px-12 py-4 font-bold  mt-10 uppercase tracking-widest">
+          <button className="bg-softRed text-darkBlue px-12 py-4 font-bold uppercase tracking-widest self-start">
             Read More
           </button>
         </div>
