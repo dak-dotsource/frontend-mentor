@@ -17,7 +17,7 @@ function App() {
   }
 
   return (
-    <div className="bg-gray-100 container lg:max-w-[1440px] lg:mx-auto p-6">
+    <div className="bg-gray-100 container lg:max-w-[1440px] mx-auto p-6">
       {/* Header mit Logo und Navigation */}
       <header className="p-2 flex items-center justify-between mb-12 ">
         <img src={logo} alt="logo" />
@@ -38,14 +38,14 @@ function App() {
         </nav>
       </header>
       {/* Main content als Grid; Hero-Image, Sidebar, Heading und Content */}
-      <main className="grid grid-cols-1 md:grid-cols-[1fr_1fr_400px] grid-rows-[1fr_200px] gap-10 ">
+      <main className="grid grid-cols-1  md:grid-cols-3 lg:grid-cols-[1fr_1fr_400px] lg:grid-rows-[1fr_400px] xl:grid-rows-[1fr_200px] gap-10 ">
         {/* Hero-Image */}
         <picture className="col-span-1 md:col-span-2 row-span-1">
-          <source srcSet={heroMobile} media="(max-width: 768px)" />
+          <source srcSet={heroMobile} media="(max-width: 1024px)" />
           <img src={hero} alt="colorful image with geometric figures" />
         </picture>
         {/* Sidebar */}
-        <aside className="flex flex-col justify-between row-span-2 bg-darkBlue px-6 pt-10">
+        <aside className="row-span-2 bg-darkBlue px-6 pt-10">
           <article>
             <h2 className="text-softOrange text-5xl font-bold">New</h2>
             <section className="text-white my-8">
@@ -80,7 +80,7 @@ function App() {
         </aside>
 
         {/* Heading und Content */}
-        <div className="col-span-1 md:col-span-2 flex flex-col md:flex-row ">
+        <div className="col-span-1 md:col-span-2 flex flex-col xl:flex-row ">
           <h2 className="text-6xl font-bold pb-6 ">
             The Bright Future of Web 3.0?
           </h2>
@@ -99,7 +99,7 @@ function App() {
 
       {/* Footer */}
 
-      <footer className="flex flex-col items-center justify-between gap-7 mt-14 md:flex-row py-10">
+      <footer className="flex flex-col items-start justify-between gap-7 mt-14 lg:flex-row py-10">
         <article className="flex items-start justify-center gap-3 h-[174px]">
           <div className="h-[174px] w-[137px] flex-shrink-0">
             <img
