@@ -6,16 +6,29 @@ import retro from "./assets/images/image-retro-pcs.jpg";
 import laptop from "./assets/images/image-top-laptops.jpg";
 import gaming from "./assets/images/image-gaming-growth.jpg";
 import iconMenu from "./assets/images/icon-menu.svg";
+import iconMenuClose from "./assets/images/icon-menu-close.svg";
 import "./App.css";
 
 function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  function toggleMenu() {
+    setIsMenuOpen(!isMenuOpen);
+  }
+
   return (
-    <div className="bg-gray-100 container max-w-[1440px] mx-auto p-6">
+    <div className="bg-gray-100 container lg:max-w-[1440px] lg:mx-auto p-6">
       {/* Header mit Logo und Navigation */}
       <header className="p-2 flex items-center justify-between mb-12 ">
         <img src={logo} alt="logo" />
         <nav>
-          <ul className="flex gap-x-6 text-gray-600">
+          <img
+            src={!isMenuOpen ? iconMenu : iconMenuClose}
+            alt="Menü"
+            className="md:hidden cursor-pointer"
+            onClick={toggleMenu}
+          />
+          <ul className="hidden md:flex gap-x-6 text-gray-600 ">
             <li className="hover:text-black cursor-pointer">Home</li>
             <li className="hover:text-black cursor-pointer">New</li>
             <li className="hover:text-black cursor-pointer">Popular</li>
@@ -25,9 +38,9 @@ function App() {
         </nav>
       </header>
       {/* Main content als Grid; Hero-Image, Sidebar, Heading und Content */}
-      <main className="grid grid-cols-[1fr_1fr_400px] grid-rows-[1fr_200px] gap-10 ">
+      <main className="grid grid-cols-1 md:grid-cols-[1fr_1fr_400px] grid-rows-[1fr_200px] gap-10 ">
         {/* Hero-Image */}
-        <picture className="col-span-2 row-span-1">
+        <picture className="col-span-1 md:col-span-2 row-span-1">
           <source srcSet={heroMobile} media="(max-width: 768px)" />
           <img src={hero} alt="colorful image with geometric figures" />
         </picture>
@@ -67,11 +80,11 @@ function App() {
         </aside>
 
         {/* Heading und Content */}
-        <div className="col-span-2 flex ">
+        <div className="col-span-1 md:col-span-2 flex flex-col md:flex-row ">
           <h2 className="text-6xl font-bold pb-6 ">
             The Bright Future of Web 3.0?
           </h2>
-          <div className="flex flex-col justify-between items-end ">
+          <div className="flex flex-col justify-between items-end gap-10 ">
             <p className="text-lg text-gray-600 ">
               We dive into the next evolution of the web that claims to put the
               power of the platforms back into the hands of the people. But is
@@ -86,10 +99,14 @@ function App() {
 
       {/* Footer */}
 
-      <footer className="flex items-center justify-between gap-7 mt-14">
+      <footer className="flex flex-col items-center justify-between gap-7 mt-14 md:flex-row py-10">
         <article className="flex items-start justify-center gap-3 h-[174px]">
-          <div className="h-full">
-            <img src={retro} alt="Retro-PC" className="object-cover" />
+          <div className="h-[174px] w-[137px] flex-shrink-0">
+            <img
+              src={retro}
+              alt="Retro-PC"
+              className="object-cover h-full w-full"
+            />
           </div>
           <div className="flex flex-col items-start h-full justify-between">
             <h3 className="text-softRed mb-3 text-4xl font-bold">01</h3>
@@ -102,8 +119,12 @@ function App() {
           </div>
         </article>
         <article className="flex items-start justify-center gap-3 h-[174px]">
-          <div className="h-full">
-            <img src={laptop} alt="Laptop" className="object-cover" />
+          <div className="h-[174px] w-[137px] flex-shrink-0">
+            <img
+              src={laptop}
+              alt="Laptop"
+              className="object-cover h-full w-full"
+            />
           </div>
           <div className="flex flex-col items-start h-full justify-between">
             <h3 className="text-softRed mb-3 text-4xl font-bold">02</h3>
@@ -116,11 +137,11 @@ function App() {
           </div>
         </article>
         <article className="flex items-start justify-center gap-3 h-[174px]">
-          <div className="h-full">
+          <div className="h-[174px] w-[137px] flex-shrink-0">
             <img
               src={gaming}
-              alt="RGaming Controller"
-              className="object-cover"
+              alt="Gaming Controller"
+              className="object-cover h-full w-full"
             />
           </div>
           <div className="flex flex-col items-start h-full justify-between">
